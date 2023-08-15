@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  --accent-orange: hsl(31, 77%, 52%);
+  --accent-cyan: hsl(184, 100%, 22%);
+  --accent-dark-cyan: hsl(179, 100%, 13%);
+
+  --neutral-white: hsla(0, 0%, 100%, 0.75);
+  --neutral-grey: hsl(0, 0%, 95%);
+
+  font-size: 15px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* STYLING  */
+
+body {
+  color: var(--neutral-white);
+  font-family: 'Lexend Deca', sans-serif;
+  padding: 1rem;
+  height: 100%;
+}
+
+h2 {
+  font-family: 'Big Shoulders Display', cursive;
+  color: var(--neutral-grey);
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.main-container {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.cards {
+  max-width: 900px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.card {
+  padding: 3rem;
+}
+
+.card p {
+  line-height: 1.7;
+  margin-bottom: 4rem;
+}
+
+.sedan {
+  background-color: var(--accent-orange);
+  border-radius: 5px 0 0 5px;
+}
+
+.sedan .btn {
+  color: var(--accent-orange);
+}
+
+.sedan .btn:hover,
+.sedan .btn:focus {
+  color: hsla(0, 0%, 100%, 1);
+  border: solid 2px hsla(0, 0%, 100%, 1);
+  background-color: var(--accent-orange);
+}
+
+.suv {
+  background-color: var(--accent-cyan);
+}
+
+.suv .btn {
+  color: var(--accent-cyan);
+}
+
+.suv .btn:hover,
+.suv .btn:focus {
+  color: hsla(0, 0%, 100%, 1);
+  border: solid 2px hsla(0, 0%, 100%, 1);
+  background-color: var(--accent-cyan);
+}
+
+.luxury .btn {
+  color: var(--accent-dark-cyan);
+}
+
+.luxury .btn:hover,
+.luxury .btn:focus {
+  color: hsla(0, 0%, 100%, 1);
+  border: solid 2px hsla(0, 0%, 100%, 1);
+  background-color: var(--accent-dark-cyan);
+}
+
+.luxury {
+  background-color: var(--accent-dark-cyan);
+  border-radius: 0 5px 5px 0;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: hsla(0, 0%, 100%, 1);
+  padding: 0.75rem 2rem;
+  border-radius: 100000px;
+  display: inline-block;
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    height: 100%;
+  }
+  .cards {
+    flex-direction: column;
+  }
+
+  h2 {
+    margin: 1rem 0;
+  }
+
+  .card p {
+    max-width: clamp(300px, 100%, 400px);
+    margin-bottom: 2rem;
+  }
+
+  .sedan {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .luxury {
+    border-radius: 0 0 5px 5px;
+  }
+}
